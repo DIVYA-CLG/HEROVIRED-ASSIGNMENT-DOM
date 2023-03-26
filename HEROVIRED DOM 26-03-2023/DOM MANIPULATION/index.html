@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="">
+	<title>DOM MANIPULATION</title>
+</head>
+<body>
+<!-- question1 -->
+
+<p id="paragraph1">question1 Create a Paragraph and assign its ID.</p>
+
+
+<p id="paragraph2">question2 whenever a mouse is pointing on this Paragraph - it should change its text color to RED.</p>
+<p id="paragraph3">question3  whenever a mouse STOPs pointing on this Paragraph - it should change its text color to BLACK.</p>
+
+<!-- question4 -->
+<button id="buttonid">Add a Button and assign its ID.</button><br><br>
+
+
+
+<button id="buttonid1">onmouseover button</button><br><br>
+<button id="buttonid2"> whenever a mouse STOPs pointing on this Button - it should change its innerHTML back to the original.</button><br><br>
+
+
+<!-- question7 -->
+<input type="text" name="textbox" id="text1">
+
+
+
+<p id="paragraph">onclick event </p>
+     <input type="text" id="text2">
+     
+<button id="button4">click here to see text </button>
+
+
+<!--question9 -->
+ <ol id="list">
+  <li>one</li>
+  <li>two</li>
+  <li>three</li>
+</ol>
+
+
+<script type="text/javascript">
+
+// question2
+
+ let events = document.getElementById('paragraph2');
+	   events.onmouseover = function(){
+	   this.style.color='red';
+	}
+
+//question3
+
+ let event1 = document.getElementById('paragraph3');
+     event1.onmouseout = function(){
+     	this.style.color='black';
+     }
+
+//question5
+
+let button = document.getElementById("buttonid1");
+    button.onmouseover = function() {
+  this.innerHTML = " whenever a mouse is pointing on this Button - it should change its own innerHTML.";
+  };
+
+ //question6
+
+ let button1 = document.getElementById("buttonid2");
+   let btn= button.innerHTML;
+   button1.onmouseout = function() {
+  this.innerHTML = btn;
+   };
+
+//question8
+
+      var event = document.getElementById("button4");
+    var para = document.getElementById("paragraph");
+    
+     var inputtext = document.getElementById("text2");
+
+    event.onclick = function() {
+    inputtext.value = para.innerHTML;
+}
+
+       
+//question10
+	
+
+	let items = document.querySelectorAll("#list li");
+
+items.forEach(item => {
+  item.addEventListener("mouseover", () => {
+    item.style.color = "green";
+    item.style.fontWeight = "bold";
+  });
+  
+  item.addEventListener("mouseout", () => {
+    item.style.color = "black";
+    item.style.fontWeight = "normal";
+  });
+});
+</script>
+</body>
+</html>
